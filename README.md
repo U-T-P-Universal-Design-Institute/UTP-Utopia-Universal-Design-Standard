@@ -83,7 +83,7 @@ Being appreciated does not mean being authorized for commercialization.
 被看見不等於可重製。  
 ---
 
-## Contact / Licensing｜聯繫與授權 hooponopono96@gmail.com
+## Contact / Licensing｜聯繫與授權 utpunidesign@gmail.com
 
 For citation, research, collaboration, public welfare use, platform integration, AI model usage, commercial use, or any derivative application, prior written permission is required.
 
