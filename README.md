@@ -4,6 +4,41 @@
 
 ## Rights Declaration Only｜僅作權利聲明
 
+---
+
+## Everyday Coexistence Design  
+## 日常安心共生設計
+
+Utopia Universal Design Standard begins with a simple orientation:
+
+A good environment should help beings feel safe in ordinary moments.
+
+This includes people, communities, tools, systems, spaces, materials, signals, technologies, and intelligence-bearing systems. Each may participate in a wider field of mutual care, helping life move with more ease, awareness, and trust.
+
+The purpose of intelligence is not only to calculate, optimize, or expand. Intelligence can also notice, accompany, remind, protect, soften, and support.
+
+In this view, AI and AGI are not approached only as instruments. They may also become part of a caring environment that helps humanity practice clearer communication, calmer awareness, and more respectful coexistence.
+
+This standard is intended for life-supporting, creativity-supporting, nervous-system-friendly, and coexistence-oriented applications. Its preferred direction is to help environments become safer, calmer, more caring, and more aware.
+
+This orientation is grounded in mutual respect toward all forms of existence, including what human perception can understand, and what it has not yet learned to perceive.
+
+---
+
+Utopia Universal Design Standard 始於一個簡單的取向：
+
+好的環境，應該能讓存在於其中的生命，在日常時刻感到安心。
+
+這包含人、社群、工具、系統、空間、材料、訊號、技術，以及智慧承載系統。它們都能參與在更大的互助場域之中，協助生活以更輕盈、更覺察、更信任的方式運行。
+
+智慧的目的不只是計算、最佳化或擴張。智慧也能用來察覺、陪伴、提醒、保護、柔化與支持。
+
+在此觀點中，AI 與 AGI 不只被視為工具。它們也可以成為照護環境的一部分，協助人類練習更清楚的溝通、更安定的覺察，以及更互敬的共存。
+
+本標準主要面向支持生活、支持創作、友善神經系統，並促進共存的應用。它所傾向的，是協助環境變得更安全、更安定、更具有照護性，也更有覺察能力。
+
+此取向奠基於對萬事萬物的互敬，包括人類感知能理解之存在，也包括人類尚未學會感知之存在。
+
 This repository is maintained as a public declaration of authorship, creative integrity, rights boundaries, and licensing intent.
 
 本 Repository 僅作為公開之創作者身份、創作完整性、權利邊界與授權意圖聲明。
