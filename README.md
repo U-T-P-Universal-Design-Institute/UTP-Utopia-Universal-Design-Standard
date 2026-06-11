@@ -1,81 +1,126 @@
-# Cursor Mobile for iPhone
+# UTP Utopia Universal Design Standard
 
-A native SwiftUI iOS app that lets you use **Cursor Cloud Agents** from your iPhone. Chat with AI agents, launch coding tasks on GitHub repositories, stream responses in real time, and manage pull requests — all optimized for one-handed mobile use.
+本專案的 GitHub 倉庫。若你**只有 iPhone、沒有 Mac**，請直接看下方「用手機管理此 Repo」——不必理會 `CursorMobile/` 資料夾。
 
-## Features
+---
 
-- **Agent Chat** — Stream assistant responses, tool calls, and thinking updates via Server-Sent Events
-- **Cloud Agents** — Create agents against your GitHub repos directly from your phone
-- **Repository Picker** — Browse repos connected through Cursor's GitHub integration
-- **Model Selection** — Choose from available Cursor models or use the server default
-- **Pull Requests** — Optionally auto-create PRs when agents finish
-- **Secure Auth** — API keys stored in the iOS Keychain, never logged or transmitted except to Cursor's API
-- **Dark Mode** — System, light, or dark appearance
+## 用手機管理此 Repo（推薦）
 
-## Requirements
+用 **Cursory**（App Store）或 **Cursor 網頁版**，讓 AI 在雲端修改這個 GitHub 專案。
 
-- iPhone or iPad running **iOS 17+**
-- **Xcode 15+** on macOS to build and run
-- A **Cursor account** with a user API key ([Cursor Dashboard → API Keys](https://cursor.com/settings))
-- GitHub repositories connected in Cursor settings
+### 事前準備（做一次）
 
-## Getting Started
+| 項目 | 說明 |
+|------|------|
+| Cursor 帳號 | 需能使用 Cloud Agent |
+| GitHub 連線 | 開啟 [cursor.com/settings](https://cursor.com/settings) → 連接 GitHub → 授權本 repo |
+| API Key | 同上頁面 → API Keys → 建立並複製 |
+| Cursory App | App Store 搜尋 **Cursory** 並安裝（iOS 17+） |
 
-1. Clone this repository
-2. Open `CursorMobile/CursorMobile.xcodeproj` in Xcode
-3. Select your development team under **Signing & Capabilities**
-4. Build and run on a simulator or connected iPhone (⌘R)
+**介面語言：** Cursory 支援英文／日文。iPhone「設定 → Cursory → 語言」可改為 English。
 
-### First Launch
+### 操作步驟
 
-1. Paste your Cursor API key on the onboarding screen
-2. The app validates the key against `GET /v1/me`
-3. Browse agents, create new ones, and chat with running agents
+#### 1. 第一次連線
 
-## Project Structure
+1. 開啟 Cursory
+2. 貼上 Cursor **API Key**（不是 `run-` 或 `bc-` 開頭的 ID）
+3. 完成 GitHub 授權（若 App 要求）
+
+#### 2. 對本 repo 下任務
+
+1. 點 **New Agent**
+2. **Repository** 選 `U-T-P-Universal-Design-Institute/UTP-Utopia-Universal-Design-Standard`
+3. **Branch** 選 `main`（或你要改的 branch）
+4. 輸入任務，例如：
+
+   ```
+   更新 README：加入繁體中文的專案說明。
+   不要修改 CursorMobile 資料夾。
+   ```
+
+5. 可勾選 **Auto-create PR**
+6. 點 **Start**
+
+#### 3. 執行中
+
+- 查看 AI 回覆與進度
+- 需要補充就輸入 follow-up
+- 做錯了可 **Stop** 後重下指令
+
+#### 4. 完成後
+
+1. 在 agent 詳情找 **PR 連結**
+2. 用 GitHub App 或 Safari 審核變更
+3. 滿意 → **Merge**；不滿意 → 繼續下指令修改
+
+### 任務撰寫範本
 
 ```
-CursorMobile/
-├── CursorMobile.xcodeproj
-└── CursorMobile/
-    ├── CursorMobileApp.swift      # App entry + auth routing
-    ├── Models/                    # Agent, Run, Repository types
-    ├── Services/                  # API client, Keychain, SSE streaming
-    ├── ViewModels/                # Observable state for each screen
-    ├── Views/                     # SwiftUI screens
-    └── Theme/                     # Colors and shared styles
+【目標】一句話說明要做什麼
+【範圍】要改的檔案或功能（知道的話寫）
+【語言】繁體中文
+【限制】不要動哪些檔案
 ```
 
-## API Integration
+### 替代方案：Cursor 網頁版
 
-The app talks directly to the [Cursor Cloud Agents API v1](https://cursor.com/docs/cloud-agent/api/endpoints):
+1. Safari 開啟 [cursor.com/agents](https://cursor.com/agents)
+2. 登入 Cursor 帳號（不用 API Key）
+3. 分享 → **加入主畫面**
 
-| Endpoint | Usage |
-|----------|-------|
-| `GET /v1/me` | Validate API key |
-| `GET /v1/agents` | List cloud agents |
-| `POST /v1/agents` | Create a new agent |
-| `POST /v1/agents/{id}/runs` | Send follow-up prompts |
-| `GET /v1/agents/{id}/runs/{runId}/stream` | Stream SSE responses |
-| `GET /v1/repositories` | List GitHub repos |
-| `GET /v1/models` | List available models |
+不需 API Key，但 iPhone 上穩定度較 Cursory 差。
 
-Authentication uses `Authorization: Bearer <api_key>`.
+---
 
-## Screenshots
+## 本 Repo 裡有什麼
 
-The app includes three main tabs:
+| 路徑 | 說明 | 你需要嗎？ |
+|------|------|-----------|
+| `README.md` | 本說明文件 | ✅ |
+| `CursorMobile/` | 原生 iOS App 原始碼（Xcode 專案） | ❌ 沒有 Mac 可忽略 |
 
-- **Agents** — List of your cloud agents with status badges and pull-to-refresh
-- **New** — Form to describe a task, pick a repo/branch/model, and start an agent
-- **Settings** — Account info, appearance, sign out
+---
 
-## Privacy
+## CursorMobile 資料夾（僅限有 Mac 的開發者）
 
-- Your API key is stored only in the device Keychain (`kSecAttrAccessibleWhenUnlockedThisDeviceOnly`)
-- No third-party analytics or backend servers
-- All requests go directly to `api.cursor.com`
+`CursorMobile/` 是 SwiftUI 原生 App 原始碼，**必須在 Mac 上用 Xcode 15+ 編譯**才能裝到 iPhone。
 
-## License
+- 沒有 Mac → **請用 Cursory，不要用這個資料夾**
+- 有 Mac 才需要：
 
-Part of the UTP Utopia Universal Design Standard project.
+  1. 開啟 `CursorMobile/CursorMobile.xcodeproj`
+  2. 設定 Signing & Capabilities
+  3. ⌘R 建置執行
+
+技術細節見 [Cursor Cloud Agents API](https://cursor.com/docs/cloud-agent/api/endpoints)。
+
+---
+
+## 分支整理說明
+
+本 repo 曾有多條 Cloud Agent 實驗分支（重複的 iOS 嘗試）。整理後**只保留 `main` 作為主線**。
+
+若你看到舊分支名稱如 `cursor/ios-*`，代表已被合併或廢棄，可安全刪除。
+
+---
+
+## 常見問題
+
+**Q：API Key 要貼哪裡？**  
+A：Cursory App 的 onboarding 畫面，或 Cursor 網頁版用帳號登入即可。
+
+**Q：`run-00000000-...` 是 API Key 嗎？**  
+A：不是，那是 Run ID 範例，不能用來登入。
+
+**Q：我能在手機上編譯 CursorMobile 嗎？**  
+A：不能，需要 Mac + Xcode。
+
+**Q：只想跟 AI 聊天寫文件，不動 code？**  
+A：用 Claude App 即可，不必開 Cursory。
+
+---
+
+## 授權
+
+UTP Universal Design Institute 專案。
